@@ -1,6 +1,11 @@
+html {
+  height: 100%;
+}
+
 body {
   font-family: "Tangerine", sans-serif;
   text-align: center;
+  background-color: rgb(242, 246, 250);
 }
 
 h1 {
@@ -11,18 +16,33 @@ h1 {
 
 .enterurl {
   position: absolute;
+  padding: 20px;
   top: 20%;
   left: 30%;
+  background-color: #fff;
+  border: 1px solid #d8dee2;
+  border-radius: 5px;
 }
 
 input {
   font-size: 28px;
   border-radius: 5px;
   margin-bottom: 10px;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  border: 1px solid #DDDDDD;
+}
+
+input[type=text]:focus{
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 15px rgba(81, 203, 238, 1);
 }
 
 button {
-  background-color: #007fff;
+  background-color: rgb(52, 143, 235);
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 24px;
   border-radius: 5px;
