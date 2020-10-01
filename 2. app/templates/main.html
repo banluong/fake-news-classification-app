@@ -15,11 +15,11 @@
       <h1>Real or Fake? Fake News Classifier</h1>
       <form action={% url 'predict' %} method="POST">
          {% csrf_token %}
-        <input type="text" id=url name="urltext" placeholder="Enter news URL here" required="required" />
+        <input type="text" id=url name="url" placeholder="Enter news URL here" required="required" />
         <br>
         <button type="submit" class="btn btn-primary btn-block btn-large">Make Prediction</button>
       </form>
-      {{predict_value}}
+      {{ predict_value }}
 
     </div>
 

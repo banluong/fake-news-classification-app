@@ -6,19 +6,21 @@ import pickle
 def index(request):
     return render(request, 'main.html')
 
-# payment_id = request.POST.get('payment_id', '')
-# In main.html: <form action={% url 'predict' %}  method="POST">
+
 with open('./predict/gbcfull.pickle', 'rb') as model_f:
 	model = pickle.load(model_f)
 
-def predict(request, url):
+def predict(request):
     if request.method == 'POST':
-        article = Article(url)
+        url=request.POST.get('url')
+        article = Article(str(url))
         article.download()
         article.parse()
         text = article.text
         text = text_pipe(text)
         pred = model.predict([text])
+        predict_value='This news article is "{}"'.format(pred[0])
+        context = {'predict_value': predict_value}
 
         return render(request, 'main.html',
-                      predict_value='This news article is "{}"'.format(pred[0]))
+                      context)
