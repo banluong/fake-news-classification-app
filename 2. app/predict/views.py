@@ -19,7 +19,8 @@ def predict(request):
         text = article.text
         text = text_pipe(text)
         pred = model.predict([text])
-        predict_value='This news article is "{}"'.format(pred[0])
+        pred_text = "True" if pred[0]==1 else "False"
+        predict_value='This news article is "{}"'.format(pred_text)
         context = {'predict_value': predict_value}
 
         return render(request, 'main.html',
