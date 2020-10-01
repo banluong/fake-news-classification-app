@@ -13,7 +13,8 @@
   <body>
     <div class="enterurl">
       <h1>Real or Fake? Fake News Classifier</h1>
-      <form action="{% url 'predict' %}" method="post">
+      <form action={% url 'predict' %} method="POST" required="required">
+         {% csrf_token %}
         <input type="text" id=url name="urltext" placeholder="Enter news URL here">
         <br>
         <button type="submit" class="btn btn-primary btn-block btn-large">Make Prediction</button>
