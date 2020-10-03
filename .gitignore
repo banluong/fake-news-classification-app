@@ -1,1 +1,6 @@
 **/secret.py
+virtualenv/
+*.log
+*.pot
+*.pyc
+__pycache__/
